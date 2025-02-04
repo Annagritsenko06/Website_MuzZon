@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="главная.css" />
+    <link rel="stylesheet" href="общ.css" />
+    <link rel="stylesheet" href="рег.css" />
+    <style>
+      /* Importing Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+  }
+
+  
+
+  .container {
+
+      justify-content: center;
+      align-items: center;
+      gap: 100px 50px;
+      padding: 100px 50px;
+  }
+
+  .container .custom-card {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 350px;
+      max-width: 100%;
+      height: 300px;
+      background: #FFF;
+      border-radius: 20px;
+      transition: 0.5s;
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+  }
+
+  .container .custom-card:hover {
+      height: 400px;
+  }
+
+  .container .custom-card .img-box {
+      position: absolute;
+      top: 20px;
+      width: 300px;
+      height: 220px;
+      background: #333;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.5s;
+  }
+
+  .container .custom-card:hover .img-box {
+      top: -100px;
+      scale: 0.75;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+  }
+
+  .container .custom-card .img-box img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .container .custom-card .custom-content {
+      position: absolute;
+      top: 252px;
+      width: 100%;
+      height: 35px;
+      padding: 0 30px;
+      text-align: center;
+      overflow: hidden;
+      transition: 0.5s;
+  }
+
+  .container .custom-card:hover .custom-content {
+      top: 130px;
+      height: 250px;
+  }
+
+  .container .custom-card .custom-content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #333333;
+  }
+
+  .container .custom-card .custom-content p {
+      color: #333;
+  }
+
+  .container .custom-card .custom-content a {
+      position: relative;
+      top: 15px;
+      display: inline-block;
+      padding: 12px 25px;
+      text-decoration: none;
+      
+      background:darkred;
+      color: #fff;
+      font-weight: 500;
+  }
+
+  .container .custom-card .custom-content a:hover {
+      opacity: 0.8;
+  }
+
+  @media (max-width: 480px) {
+      .container .custom-card {
+          width: 230px;
+          border-radius: 15px;
+      }
+
+      .container .custom-card .img-box {
+          width: 185px;
+          border-radius: 10px;
+      }
+
+      .container .custom-card .custom-content p {
+          font-size: 0.8rem;
+      }
+
+      .container .custom-card .custom-content a {
+          font-size: 0.9rem;
+      }
+  }
+  .cont {
+  width: 600px;
+  height: 300px;
+  background-image: url(белый.svg);
+  background-repeat: repeat;
+}
+
+
+.containe {
+          background-color: RGB(255, 255, 255,0.5);
+        justify-content: space-between;
+        border-radius: 10px;
+  padding-top: 80px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 80px;
+  margin-bottom: 20px;
+  margin: 20px 100px 20px 100px;
+}
+.p{
+  
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 23px;
+    font-style:bold;
+}
+
+    
+.h1{
+    margin-bottom: -20px;
+    margin-top: 100px;
+    text-align: center;
+    font-size: 80px;
+    font-style:bold;
+}
+
+.a{
+    text-decoration: none;
+    font-style:bold;
+    font-size: 25px;
+    color:cadetblue;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  
+ .containe{
+  background-color: RGB(255, 255, 255,0.5);
+  justify-content: space-between;
+  border-radius: 10px;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  margin: 20px 10px 20px 10px;
+ }
+   
+}
+
+      </style>
+</head>
+<body>
+    
+    <nav class="navbar">
+<div class="navbar__top">
+<h1 class="navbar__title">
+  
+  </h1>
+<button class="navbar__toggle-btn" onclick="toggleNavbar()">-</button>
+</div>
+<ul class="navbar__list">
+<li class="navbar__item"><a href="#metka">О нас</a></li>
+<li class="navbar__item"><a href="#metka2">Товары</a></li> 
+<li class="navbar__item"><a href="#metka3">Бренды</a></li>
+<li class="navbar__item"><a href="#metka4">Доставка</a></li>
+<li class="navbar__item"><a href="#metka5">Обратная связь</a></li>
+
+</ul>
+</nav>
+<script>
+function toggleNavbar() {
+const navbarList = document.querySelector('.navbar__list');
+const toggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarList.classList.toggle('hidden');
+ if (navbarList.classList.contains('hidden')) {
+toggleBtn.innerHTML = "☰"; 
+ }else{
+toggleBtn.innerHTML = "-";
+ }
+}
+</script>
+<main>
+   
+<div class="container">
+  <div class="cont">
+  <img src="белый.svg" alt="">
+     </div>
+    <section id="about" class="about">
+   
+    
+        Салон музыкальных инструментов
+
+    </section>
+
+    
+  </div>
+  </main>
+  <h1 class="h1" ><a name="metka">О нас</a></h1>
+  <div class="containe">
+      <p class="p">Мы являемся дистрибьютором ведущих мировых брендов, регулярно следим за новинками музыкальной индустрии и способны удовлетворить спрос как начинающего музыканта, так и самого требовательного профессионала.</p>
+      <p class="p">Всегда работаем по принципу «каждый наш клиент – наш друг», поэтому Вы можете расслабиться и чувствовать себя как дома с первого дня нашего знакомства! Не стесняйтесь задавать вопросы, даже если Вам просто нужна консультация! Мы с радостью подскажем и поможем не ошибиться при выборе музыкального инструмента, оборудования или даже просто аксессуара!</p>
+      <p class="p">Все наши специалисты – музыканты, потому что мы глубоко убеждены, что только музыкант сможет понять музыканта! И не важно, начинающий Вы или профессионал, ведь мы все когда-то с чего-то начинали.</p>
+       </div>
+      
+
+       <a name="metka2">
+        <div></div>
+        </a>
+<div class="container">
+  <div class="custom-card">
+    <div class="img-box"><img src="12692_1.jpg"></div>
+    <div class="custom-content">
+      <h2>Электрогитара Cort</h2>
+      <p>700$</p>
+      <p>Корпус инструмента изготовлен из махагони. Инструмент покрыт глянцевым лаком, который создаёт красивый и блестящий внешний вид инструмента. </p>
+         <a href="">Купить</a>
+    </div>
+  </div>
+  
+  <div class="custom-card">
+    <div class="img-box"><img src="12750_2.jpg"></div>
+    <div class="custom-content">
+      <h2>Электрогитара Jackson</h2>
+      <p>530$</p>
+      <p>Древесина корпуса – тополь. Инструмент покрыт глянцевым лаком. Материал грифа – клён. Накладка грифа – амарант. Тип вибратора – «Tremolo».</p>
+      <a href="">Купить</a>
+    </div>
+  </div>
+  <div class="custom-card">
+    <div class="img-box"><img src="27289_1.jpg"></div>
+    <div class="custom-content">
+      <h2>Рояль Kawai</h2>
+      <p>25600$</p>
+      <p>Акустический рояль Kawai GL 20 черный полированный, длина 157 см</p>
+      <a href="">Купить</a>
+    </div>
+  </div>
+
+  <div class="custom-card">
+    <div class="img-box"><img src="29698_1.jpg"></div>
+    <div class="custom-content">
+      <h2>Микрофон Rode PodMic</h2>
+      <p>98$</p>
+      <p>RODE PodMic, разъем: XLR 3 pin (M), черный, тип динамический/ ленточный</p>
+      <a href="">Купить</a>
+    </div>
+  </div>
+
+  <div class="custom-card">
+    <div class="img-box"><img src="36685_1.jpg"></div>
+    <div class="custom-content">
+      <h2>Большой барабан Sonor</h2>
+      <p>275$</p>
+      <p>Большой барабан Sonor SQ1 2414 BD NM GTB</p>
+      <a href="">Купить</a>
+    </div>
+  </div>
+  <div class="custom-card">
+    <div class="img-box"><img src="36682_1.jpg"></div>
+    <div class="custom-content">
+      <h2>Большой барабан</h2>
+      <p>310$</p>
+      <p>Большой барабан Sonor ProLite PL 12 2217 BD NM CRW</p>
+      <a href="">Купить</a>
+    </div>
+  </div>
+</div>
+<a name="metka3"><img src="Снимок экрана 2024-04-14 033717.png"></a>
+
+
+<h1 class="h1"><a name="metka4">Доставка</a></h1>
+<div class="dostavka">
+  <div class="flex-container">
+   
+  <p class="text"> 
+    Курьером по Минску <br/>
+    Доставка осуществляется нашим курьером в рабочие дни с 10.00 до 17.00. Заказ стоимостью более 100.00 BYN мы бесплатно доставим Вам по Минску и в пределах 10 км от МКАД. Если стоимость Вашего заказа менее 100.00 BYN, то стоимость доставки составит 10.00 BYN по Минску и 15.00 BYN в пределах 10 км от МКАД</p>
+  
+    <img src="минск.jpg" class="pochta">
+  </div>
+  <div class="flex-container">
+  <img src="почта.png" class="pochta2">
+  <p class="text">
+   Доставка по Республике Беларусь посредством РУП "Белпочта" <br/>
+    Срок доставки: от 1 до 6 рабочих дней с момента отправления. Стоимость доставки: При оплате посредством наложенного платежа стоимость доставки рассчитывается по тарифам РУП «Белпочта» и зависит от стоимости и веса товара.
+  </p>
+</div>
+  <div class="flex-container">
+  <p class="text">
+    Самовывоз<br/>
+    Товар Вы можете забрать в самом центре города, в нашем салоне музыкальных инструментов «Muzzone», расположенном по адресу: г. Минск, пр-т Независимости д. 33 (ст. м. Площадь Победы).
+  </p>
+  <img src="man.jpg" сlass="pochta3">
+  </div>
+  </div>
+
+  <a name="metka5">
+    <div></div>
+    </a>
+<form action="">
+  <div class="contaner">
+  <h2>Напишите нам...</h2>
+  <label for="">Email</label>
+  <input type="email" placeholder="...ваш email"/>
+  <label for="">Введите сообщение</label>
+  <input type="password" placeholder="..ваше сообщение"/>
+  <button class="btn-login" type="submit" >Отправить</button>
+  <p class="signup">
+  Хотите написать еще? <a href="#" class="link">Заново</a>
+  </p>
+  <p class="signup">
+     Вернуться <a href="главная.html" >на главную</a>
+      </p>
+  </div>
+  <hr />
+  <a class="btn-external-login"><img src="google.png" alt=""/><span>Continue with Google</span></a>
+  <a class="btn-external-login"><img src="mac.png" alt=""/>Continue with Apple</a>
+  </form>
+  
+<footer>
+    <div class="heading">
+        <h2><i class="bi"></i></h2>
+    </div>
+    <div class="menus">
+    <ul>
+    <li class="title">Быстрая связь с нами</li>
+    <li>Тел: +375 (17) 354-22-6</li>
+    <li>Тел: +375 (29) 808-22-66</li>
+    <li>Email:muzzone.by</li>
+    </ul>
+    
+    
+    <div class="Social">
+        <a href="#"><i class="bi"></i><img src="1384023.png" class="be"></a>
+        <a href="#"><i class="bi"></i><img src="telegram_icon_197948.png" class="be"></a>
+        <a href="#"><i class="bi"></i><img src="inst.png" class="be"></a>
+        
+    </div>
+    
+</footer>
+</body>
+</html>
